@@ -22,6 +22,10 @@ deploy-site-1: ## Deploy Configs via eAPI
 cvp-site-1: ## Deploy Configs via eAPI
 	ansible-playbook playbooks/cvp1.yml -i sites/site_1/inventory.yml
 
+.PHONY: test-site-1
+test-site-1:
+	ansible-playbook playbooks/anta.yml -i sites/site_1/inventory.yml -e "target_hosts=SITE1_FABRIC"
+
 ########################################################
 # Site 2
 ########################################################
